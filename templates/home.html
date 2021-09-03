@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %} HOME {% endblock %}
+
+
+
+{% block content %} 
+    
+<h2>Página Índex</h2>
+    
+{{text}}
+
+{% for nome in nomes %}
+    <ul>
+        <li>{{nome}}</li>
+    </ul>
+{% endfor %}
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<div class="container">
+<form action="{% url 'add_newsletter' %}" method="POST">
+    {% csrf_token %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+                <li>
+                    <div class="alert alert-{{msg.level_tag}}" role="alert">
+                        {{msg}}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>    
+    {% endif %}
+
+
+        <div class="mb-3">
+            <label class="form-label">Seu Nome: </label>
+            {{form_news.nome}}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Seu melhor Email: </label>
+            {{form_news.emailnews}}
+            <div class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+        </div>
+
+ 
+        <input type="submit" value="Cadastrar" class="btn-success">
+    </div>
+
+{% endblock %}

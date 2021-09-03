@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} REGISTRO {% endblock %}
+
+
+{% block content %} 
+
+<h2>Formulario de Cadastros</h2>
+
+<div class="container">
+   
+    <form action="{% url 'adduser' %}" method="POST">
+    {% csrf_token %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for msg in messages %}
+                <li>
+                    <div class="alert alert-{{msg.level_tag}}" role="alert">
+                        {{msg}}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>    
+    {% endif %}
+
+        <div class="mb-3">
+            <label class="form-label">Usuario: </label>
+            {{form.username}}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Senha: </label>
+            {{form.password}}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email: </label>
+            {{form.email}}
+            <div class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+        </div>
+
+   
+        <div class="mb-3">
+            <label class="form-label">Telefone: </label>
+            {{form.tel}}
+        </div>
+
+ 
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+</div>
+
+{% endblock %}
+
+<!--
+author
+title
+description
+-->

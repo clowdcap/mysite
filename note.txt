@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=I5HWf4EMhWI&list=PL2Dw5PtrD32wbOuAufUdr8VRFvuS8sTp5&index=21
+
+Curso Programação - Criando Uma Aplicação Em Django 2.1.2 - Bootstrap - Mysql - 21
