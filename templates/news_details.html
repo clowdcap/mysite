@@ -1,21 +1,66 @@
 {% extends 'base.html' %}
 
-{% block title %} NEWS AND DETAILS {% endblock %}
+{% block title %} PROJETO {% endblock %}
 
 
 {% block content %} 
-    
-<h2>Novidades e Detalhes</h2>
 
-<h3>{{object.author}}</h3>
-<h3>{{object.title}}</h3>
-<p>{{object.description}}</p>
-<p>{{object.pub_date}}</p>
+<!-- CAPA -->
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Exemplo</h1>
+            <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nostrum, nesciunt itaque necessitatibus fugiat quis ullam vero dolor ipsam magnam nobis voluptatum et modi. Placeat quo temporibus itaque quae culpa.    </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- CARD BOX -->
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marcador de posição: miniatura" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{object.title}}</text></svg>
+
+                    <div class="card-body">
+                    <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object.description}}</font><font style="vertical-align: inherit;"> <br>Veja mais</font></font></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object.author}}</font></font></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Post</font></font></button>
+                            </div>
+                            <small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object.pub_date}}</font></font></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marcador de posição: miniatura" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{object_2.title}}</text></svg>
+
+                    <div class="card-body">
+                    <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object_2.description}}</font><font style="vertical-align: inherit;"> <br>Veja mais</font></font></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object_2.author}}</font></font></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Post</font></font></button>
+                            </div>
+                            <small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{object_2.pub_date}}</font></font></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+</div>
 
 {% endblock %}
-
-<!--
-author
-title
-description
--->
