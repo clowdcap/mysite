@@ -5,6 +5,9 @@ from .forms import RegisterForms
 from .newsletter import RegisterNewsletter
 from django.contrib import messages
 from django.template import RequestContext
+from datetime import datetime
+
+
 
 
 def home(request):
@@ -17,7 +20,16 @@ def home(request):
 
 
 def contato(request):
-    context = {}
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    
+    context = {
+        "horario": now,
+        "horario2": current_time,
+        "emailContent": "jose.marinho56@gmail.com",
+        "telefoneContent": "(41) 99272-5388",
+        "enderecoContent": "Rua tal, 250 - Sala 2 - Bairro X, Cidade-UF"
+    }
     return render(request, "contato.html", context)
 
 
