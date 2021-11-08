@@ -84,3 +84,8 @@ def add_newsletter(request):
         messages.add_message(request, messages.SUCCESS, "Cadastro realizado com sucesso")
         
         return redirect('home') 
+    
+
+def localizacao_projetos(request):
+    context = {"form": RegisterForms}
+    return render(request, "local.html", context)
