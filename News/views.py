@@ -36,7 +36,7 @@ def contato(request):
 def news_details(request):
 
     obj = News.objects.get(id=1)
-    obj_2 = News.objects.get(id=2)
+
     context = {
         "object": obj,
         "object_2": obj_2,
