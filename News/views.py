@@ -1,12 +1,9 @@
 from django.shortcuts import redirect, render
-from django.shortcuts import HttpResponse
 from .models import DataRegistro, News, Newsletter
 from .forms import RegisterForms
 from .newsletter import RegisterNewsletter
 from django.contrib import messages
-from django.template import RequestContext
 from datetime import datetime
-
 
 
 
@@ -64,9 +61,7 @@ def add_user(request):
                                 email=form.cleaned_data['email'],
                                 tel=form.cleaned_data['tel'])
         registro.save()
-        
         messages.add_message(request, messages.SUCCESS, "Cadastro realizado com sucesso")
-        
         return redirect('add') 
     
     
